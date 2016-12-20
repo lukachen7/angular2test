@@ -1,0 +1,26 @@
+<h1>
+  {{title}}
+</h1>
+<ul>
+	<li *ngFor="let item of items; let i = index;">{{ item }}+{{i}}</li>			
+</ul>
+<div [saTooltip]="'word2'" [saTooltipText]="'helloworld'">11</div>
+<ul>
+	<li *ngFor='let todo of todos' [class.completed]='todo.completed'>
+		{{todo.label}}
+	</li>
+</ul>
+<input type="text" #todoInput [(ngModel)]='title'/>
+<button (click)="printValue(todoInput.value);todoInput.value=''">确定</button>
+
+<input-box inputPlaceholder="New todo..." buttonLabel="Add" (inputText)="addTodo($event)">请添加todo条目
+</input-box>
+
+<tabs (changed)="tabChanged($event)">
+  <tab-title>Tab 1</tab-title>
+  <tab-content>Content 1</tab-content>
+  <tab-title>Tab 2</tab-title>
+  <tab-content>Content 2</tab-content>
+</tabs>
+
+<user-panel><user-rating></user-rating></user-panel>
