@@ -5,11 +5,10 @@
 	<li *ngFor="let item of items; let i = index;">{{ item }}+{{i}}</li>			
 </ul>
 <div [saTooltip]="'word2'" [saTooltipText]="'helloworld'">11</div>
-<ul>
-	<li *ngFor='let todo of todos' [class.completed]='todo.completed'>
-		{{todo.label}}
-	</li>
-</ul>
+<todo-list [todos]="todos"
+  (toggle)="toggleCompletion($event)"
+  [itemsTemplate]="itemsTemplate">
+</todo-list>
 <input type="text" #todoInput [(ngModel)]='title'/>
 <button (click)="printValue(todoInput.value);todoInput.value=''">确定</button>
 

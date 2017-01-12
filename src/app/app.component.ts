@@ -1,6 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, ContentChild, TemplateRef, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from '../interface/todo.interface'
-import { InputBox } from '../component/inputbox.component'
 
 @Component({
   selector: 'app-root',
@@ -12,11 +11,11 @@ export class AppComponent {
   items = ['im one','im two'];
   isShow = true;
   todos: Todo[] = [{
-  	label:'todo1',
-  	completed:false
-  },{
-  	label:'todo2',
-  	completed:true
+    label: 'Buy milk',
+    completed: false
+  }, {
+    label: "Save the world",
+    completed: true
   }];
   printValue(value){
   	console.log(value);
@@ -30,4 +29,9 @@ export class AppComponent {
   tabChanged(tab) {
     console.log(tab);
   }
+  toggleCompletion(param){
+  	console.log(param);
+  }
+  @ContentChild(TemplateRef)
+  itemsTemplate: TemplateRef<any>;
 }

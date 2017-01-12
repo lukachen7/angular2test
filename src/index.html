@@ -8,6 +8,14 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root>Loading...</app-root>
+  <app-root>
+  	<template let-todo>
+  			<input type="checkbox" [checked]="todo.completed"
+	          (change)="todo.completed = !todo.completed;">
+	        <span [class.completed]="todo.completed">
+	          {{todo.label}}
+	        </span>       
+      </template>
+  </app-root>
 </body>
 </html>

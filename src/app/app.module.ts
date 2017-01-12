@@ -8,6 +8,7 @@ import { Tooltip } from '../directive/tooltip.directive';
 import { InputBox } from '../component/inputbox.component';
 import { Tabs,TabContent,TabTitle } from '../component/tabs.component';
 import { UserPanel,UserBadge,UserRating } from '../component/userpanel.component';
+import { TodoList } from '../component/todolist.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UserPanel,UserBadge,UserRating } from '../component/userpanel.component
     TabTitle,
     UserPanel,
     UserRating,
-    UserBadge
+    UserBadge,
+    TodoList
   ],
   imports: [
     BrowserModule,
